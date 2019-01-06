@@ -3,11 +3,11 @@ import './season-display.css';
 
 const seasonConfig = {
     summer: {
-        text: "Let's hit the beach",
+        text: "Summer time. Let's hit the beach!!",
         iconName: "sun"
     },
     winter: {
-        text: "Burr, it is chilly",
+        text: "Winter is here. Burr, it is cold!!",
         iconName: "snowflake"
     }
 };
@@ -27,7 +27,11 @@ const SeasonDisplay = (props) => {
     return(
         <div className={`season-display ${season}`}>
             <i className={`icon-left massive snowflake icon`} />
-            <h1>{text}</h1>
+            <div className={`center`}>
+                <h1>Latitude: {props.lat}</h1>
+                <h1>Longitude: {props.lng}</h1>
+                <h1>{text}</h1>
+            </div>
             <i className={`icon-right massive snowflake icon`} />
         </div>
     );
